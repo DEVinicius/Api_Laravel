@@ -14,7 +14,7 @@ class Historico extends Model
         'nome_historico',
         'id_patrimonio',
         'id_empresa',
-        'local_origem',
+        'id_ambiente',
         'local_destino'
     ];
 
@@ -24,7 +24,7 @@ class Historico extends Model
             'nome_historico' => 'required',
             'id_patrimonio' => 'required',
             'id_empresa' => 'required',
-            'local_origem' => 'required'
+            'id_ambiente' => 'required'
         ];
     }
 

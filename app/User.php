@@ -11,6 +11,8 @@ use App\Models\NivelUsuario;
 
 class User extends Authenticatable implements JWTSubject
 {
+    public $timestamps = false;
+    
     use Notifiable;
 
     /**

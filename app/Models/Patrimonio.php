@@ -8,6 +8,8 @@ use App\Models\Historico;
 
 class Patrimonio extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'nome_patrimonio',
         'descricao',

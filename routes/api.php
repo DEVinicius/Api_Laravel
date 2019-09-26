@@ -11,6 +11,8 @@ use App\Providers\RouteServiceProvider;
   Route::apiResource('historicos','Api\HistoricoController');
   Route::apiResource('usuario','Api\HistoricoController');
 
+  
+  Route::post('cadastro', 'AuthController@cadastrar');
   Route::post('login', 'AuthController@login');
   Route::post('logout', 'AuthController@logout');
   Route::post('refresh', 'AuthController@refresh');

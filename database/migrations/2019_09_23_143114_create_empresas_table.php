@@ -24,7 +24,6 @@ class CreateEmpresasTable extends Migration
             $table->string('estado');
             $table->string('telefone')->unique();
             $table->string('email')->unique();
-            $table->timestamps();
         });
     }
 

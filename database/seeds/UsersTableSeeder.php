@@ -22,4 +22,6 @@ class UsersTableSeeder extends Seeder
             'imagem' => 'img/gim'
         ]);
     }
+
+    
 }

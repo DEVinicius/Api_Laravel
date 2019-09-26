@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 //importando as Models dos arquivos que recebem  o id da empresa
-use App\Models\Setor;
+use App\Models\Ambiente;
 use App\Models\Historico;
 use App\User;
 
 class Empresa extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [ 
         'nome_empresa',
         'cnpj',
@@ -37,9 +39,9 @@ class Empresa extends Model
         ];
     }
 
-    public function setor(){
+    public function ambiente(){
         //primeiro id da tabela externa, segundo(tabela interna)
-        return $this->hasMany(Setor::class, 'id_empresa', 'id');
+        return $this->hasMany(Ambiente::class, 'id_empresa', 'id');
     }
 
     public function historico(){

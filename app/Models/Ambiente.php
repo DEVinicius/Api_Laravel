@@ -3,16 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Setor;
+use App\Models\Empresa;
 use App\Models\Patrimonio;
 use App\Models\Historico;
 
 class Ambiente extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [ 
         'nome_ambiente', 
         'quantidade_patrimonio', 
-        'id_setor'
+        'id_empresa'
     ];
 
     public function rules()
@@ -21,13 +23,13 @@ class Ambiente extends Model
         return [
             'nome_ambiente' => 'required',
             'quantidade_patrimonio' => 'required',
-            'id_setor' => 'required'
+            'id_empresa' => 'required'
         ];
     }
 
-    public function setor()
+    public function empresa()
     {
-        return $this -> belongsTo(Setor::class, 'id_setor', 'id');  
+        return $this -> belongsTo(Empresa::class, 'id_empresa', 'id');  
     }
 
     public function patrimonio()

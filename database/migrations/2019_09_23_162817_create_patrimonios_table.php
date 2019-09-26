@@ -19,7 +19,6 @@ class CreatePatrimoniosTable extends Migration
             $table->string('descricao');
             $table->bigInteger('id_ambiente')->unsigned();
             $table->string('codigo_patrimonio')->unique();
-            $table->timestamps();
 
             $table->foreign('id_ambiente')->references('id')->on('ambientes');
         });

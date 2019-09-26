@@ -6,30 +6,19 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateAmbientesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('ambientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_ambiente');
             $table->char('quantidade_patrimonio');
-            $table->bigInteger('id_setor')->unsigned();
-            $table->timestamps();
+            $table->bigInteger('id_empresa')->unsigned();
 
-            $table->foreign('id_setor')->references('id')->on('setors');
+            $table->foreign('id_empresa')->references('id')->on('empresas');
             
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('ambientes');

@@ -16,15 +16,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('cpf');
-            $table->bigInteger('id_empresa');
-            $table->bigInteger('id_nivel_usuario');
+            $table->bigInteger('id_empresa')->unsigned();
+            $table->bigInteger('id_nivel_usuario')->unsigned()->nullable();
             $table->string('telefone');
             $table->string('imagem');
             $table->rememberToken();
-            $table->timestamps();
 
             $table->foreign('id_empresa')->references('id')->on('empresas');
-            $table->foreign('id_nivel_usuario')->references('id')->on('nivel_usuarios');
+            $table->foreign('id_nivel_usuario')->references('id')->on('nivel_users');
         });
     }
 

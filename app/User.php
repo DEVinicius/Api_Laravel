@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use App\Models\Empresa;
+use App\Models\NivelUsuario;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -17,7 +19,14 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 
+        'email', 
+        'password',
+        'cpf',
+        'id_empresa',
+        'id_nivel_user',
+        'telefone',
+        'imagem'
     ];
 
     /**
@@ -51,5 +60,15 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'id_empresa', 'id');
+    }
+
+    public function nivelusuario()
+    {
+        return $this->belongsTo(NivelUsuario::class, 'id_nivel_usuario', 'id');
     }
 }

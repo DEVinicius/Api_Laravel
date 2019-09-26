@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -19,16 +15,19 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('cpf');
+            $table->bigInteger('id_empresa');
+            $table->bigInteger('id_nivel_usuario');
+            $table->string('telefone');
+            $table->string('imagem');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_empresa')->references('id')->on('empresas');
+            $table->foreign('id_nivel_usuario')->references('id')->on('nivel_usuarios');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('users');

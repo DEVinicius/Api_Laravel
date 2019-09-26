@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 //importando as Models dos arquivos que recebem  o id da empresa
 use App\Models\Setor;
 use App\Models\Historico;
+use App\User;
 
 class Empresa extends Model
 {
@@ -44,5 +45,9 @@ class Empresa extends Model
     public function historico(){
         //primeiro id da tabela externa, segundo(tabela interna)
         return $this->hasOne(Historico::class, 'id_empresa', 'id');
+    }
+
+    public function usuario(){
+        return $this->hasMany(User::class, 'id_empresa', 'id');
     }
 }

@@ -14,13 +14,11 @@ use App\Providers\RouteServiceProvider;
     'namespace' => 'Api',
     'middleware' => 'auth:api'
   ],function(){
-      Route::apiResource('ambientes','Api\AmbienteController');
-      Route::apiResource('empresas','Api\EmpresaController');
-      Route::apiResource('setores','Api\SetorController');
-      Route::apiResource('patrimonios','Api\PatrimonioController');
-      Route::apiResource('historicos','Api\HistoricoController');
-      Route::apiResource('usuario','Api\HistoricoController');
+      Route::apiResource('ambientes','AmbienteController');
+      Route::apiResource('empresas','EmpresaController');
+      Route::apiResource('setores','SetorController');
+      Route::apiResource('patrimonios','PatrimonioController');
+      Route::apiResource('historicos','HistoricoController');
+      Route::apiResource('usuario','HistoricoController');
   });
-  
-  
 ?>

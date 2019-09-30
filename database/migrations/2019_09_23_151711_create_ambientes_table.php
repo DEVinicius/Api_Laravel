@@ -10,7 +10,7 @@ class CreateAmbientesTable extends Migration
     {
         Schema::create('ambientes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome_ambiente');
+            $table->string('nome_ambiente','100');
             $table->char('quantidade_patrimonio');
             $table->bigInteger('id_empresa')->unsigned();
 

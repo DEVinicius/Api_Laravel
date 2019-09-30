@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Empresa;
 use App\Models\Patrimonio;
 use App\Models\Historico;
+use App\Models\UserArray;
 
 class Ambiente extends Model
 {
@@ -40,5 +41,10 @@ class Ambiente extends Model
     public function historico()
     {
         return $this->hasMany(Historico::class, 'id_ambiente', 'id');
+    }
+
+    public function user_array()
+    {
+        return $this->hasMany(UserArray::class, 'id_ambiente', 'id');
     }
 }

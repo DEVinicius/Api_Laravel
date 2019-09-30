@@ -15,11 +15,11 @@ class CreateHistoricosTable extends Migration
     {
         Schema::create('historicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome_historico');
+            $table->string('nome_historico','60');
             $table->bigInteger('id_patrimonio')->unsigned();
             $table->bigInteger('id_empresa')->unsigned();
             $table->bigInteger('id_ambiente')->unsigned();
-            $table->string('local_destino')->nullable();
+            $table->string('local_destino','50')->nullable();
             $table->timestamps();
 
             $table->foreign('id_patrimonio')->references('id')->on('patrimonios');

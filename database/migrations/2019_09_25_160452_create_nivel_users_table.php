@@ -15,7 +15,7 @@ class CreateNivelUsersTable extends Migration
     {
         Schema::create('nivel_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome_funcao');
+            $table->string('nome_funcao','60');
         });
     }
 

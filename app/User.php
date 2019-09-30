@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Models\Empresa;
 use App\Models\NivelUsuario;
+use App\Models\UserArray;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -72,5 +73,9 @@ class User extends Authenticatable implements JWTSubject
     public function nivelusuario()
     {
         return $this->belongsTo(NivelUsuario::class, 'id_nivel_usuario', 'id');
+    }
+
+    public function user_array(){
+        return $this->hasMany(UserArray::class, 'id_user', 'id');
     }
 }

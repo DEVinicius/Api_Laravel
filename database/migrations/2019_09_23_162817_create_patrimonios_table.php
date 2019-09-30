@@ -15,10 +15,10 @@ class CreatePatrimoniosTable extends Migration
     {
         Schema::create('patrimonios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome_patrimonio');
-            $table->string('descricao');
+            $table->string('nome_patrimonio','60');
+            $table->text('descricao');
             $table->bigInteger('id_ambiente')->unsigned();
-            $table->string('codigo_patrimonio')->unique();
+            $table->string('codigo_patrimonio','30')->unique();
 
             $table->foreign('id_ambiente')->references('id')->on('ambientes');
         });

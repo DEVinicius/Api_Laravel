@@ -23,17 +23,11 @@ class AuthController extends Controller
         $dados = $req->all();
 
         
-        if(User::where('cpf', $dados['cpf'])->orWhere('email', $dados['email'])->count() == 0){
-            if(User::cpf($dados['cpf']))
-            {
-                if($dados['password'] == $dados['confirmar_senha'])
-                {
+        if(User::where('cpf', $dados['cpf'])->orWhere('email', $dados['email'])->count() == 0){               
                     $dados['password'] = bcrypt($dados['password']);
                     User::create($dados);
-                    
-                    return redirect()->route('login');
-                }
-            }
+
+                    return response()->json(['message' => 'Cadastro Realizado com Sucesso'],201);
         }
     }
 
@@ -44,10 +38,8 @@ class AuthController extends Controller
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-        User::where('email', $credentials['email'])
-        ->update(['remember_token' => $token]);
-        //return $this->respondWithToken($token);
-        return redirect()->route('index');
+       
+        return $this->respondWithToken($token);
     }
 
     public function me()

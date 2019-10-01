@@ -12,13 +12,13 @@ use App\Providers\RouteServiceProvider;
 
   Route::group([
     'namespace' => 'Api',
-    'middleware' => 'auth:api'
+    //'middleware' => 'auth:api'
   ],function(){
-      Route::apiResource('ambientes','AmbienteController')->name();
+      Route::apiResource('ambientes','AmbienteController');
       Route::apiResource('empresas','EmpresaController');
       Route::apiResource('setores','SetorController');
       Route::apiResource('patrimonios','PatrimonioController');
       Route::apiResource('historicos','HistoricoController');
-      Route::apiResource('usuario','HistoricoController');
+      Route::apiResource('usuarios','UserController');
   });
 ?>

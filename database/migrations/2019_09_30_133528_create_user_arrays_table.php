@@ -9,15 +9,14 @@ class CreateUserArraysTable extends Migration
     public function up()
     {
         Schema::create('user_arrays', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('id_user')->unsigned();
-            $table->bigInteger('id_ambiente')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('ambiente_id')->unsigned();
 
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_ambiente')->references('id')->on('ambientes');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('ambiente_id')->references('id')->on('ambientes');
 
             //criar uma chave primária que fará com que um usuario se conecte apenas uma vez ao ambiente respectivo
-            $table->primary(['id_user','id_ambiente']);
+            $table->primary(['user_id','ambiente_id']);
         });
     }
 

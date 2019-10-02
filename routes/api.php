@@ -12,7 +12,6 @@ use App\Providers\RouteServiceProvider;
 
   Route::group([
     'namespace' => 'Api',
-    //'middleware' => 'auth:api'
   ],function(){
       Route::apiResource('ambientes','AmbienteController');
       Route::apiResource('empresas','EmpresaController');

@@ -10,18 +10,18 @@ class UserArray extends Model
 {
     public $timestamps = false;
 
-    // protected $fillable = [
-    //     'id_user',
-    //     'id_ambiente'
-    // ];
+     protected $fillable = [
+         'id_user',
+         'id_ambiente'
+     ];
 
-    // public function rules()
-    // {
-    //     return [
-    //         'id_user' => 'required',
-    //         'id_ambiente' => 'required'
-    //     ];
-    // }
+     public function rules()
+     {
+         return [
+             'id_user' => 'required',
+             'id_ambiente' => 'required'
+         ];
+     }
 
 
 }

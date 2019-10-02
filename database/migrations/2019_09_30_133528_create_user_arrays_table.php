@@ -9,6 +9,7 @@ class CreateUserArraysTable extends Migration
     public function up()
     {
         Schema::create('user_arrays', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->bigInteger('id_user')->unsigned();
             $table->bigInteger('id_ambiente')->unsigned();
 

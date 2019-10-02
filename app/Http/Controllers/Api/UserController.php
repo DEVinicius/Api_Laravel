@@ -20,4 +20,9 @@ class UserController extends MasterApiController
        $this -> model = $pat;
        $this -> request = $req;
    }
+
+   public function index() {
+    $data = $this -> model -> with('user_arrays') -> get();
+    return response() -> json($data);
+}
 }

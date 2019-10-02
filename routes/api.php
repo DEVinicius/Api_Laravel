@@ -20,5 +20,6 @@ use App\Providers\RouteServiceProvider;
       Route::apiResource('patrimonios','PatrimonioController');
       Route::apiResource('historicos','HistoricoController');
       Route::apiResource('usuarios','UserController');
+      Route::apiResource('userarray','UserArrayController');
   });
 ?>

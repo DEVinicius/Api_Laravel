@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\Api\\HistoricoController' => $baseDir . '/app/Http/Controllers/Api/HistoricoController.php',
     'App\\Http\\Controllers\\Api\\PatrimonioController' => $baseDir . '/app/Http/Controllers/Api/PatrimonioController.php',
     'App\\Http\\Controllers\\Api\\UserArrayController' => $baseDir . '/app/Http/Controllers/Api/UserArrayController.php',
+    'App\\Http\\Controllers\\Api\\UserController' => $baseDir . '/app/Http/Controllers/Api/UserController.php',
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',

@@ -565,17 +565,17 @@
     },
     {
         "name": "facade/ignition",
-        "version": "1.9.0",
-        "version_normalized": "1.9.0.0",
+        "version": "1.9.1",
+        "version_normalized": "1.9.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/facade/ignition.git",
-            "reference": "40461a1f680171876c186dfff419b2a4c892995c"
+            "reference": "ca7ab4f49230cb57c62fedddc5245f5496b82065"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/facade/ignition/zipball/40461a1f680171876c186dfff419b2a4c892995c",
-            "reference": "40461a1f680171876c186dfff419b2a4c892995c",
+            "url": "https://api.github.com/repos/facade/ignition/zipball/ca7ab4f49230cb57c62fedddc5245f5496b82065",
+            "reference": "ca7ab4f49230cb57c62fedddc5245f5496b82065",
             "shasum": ""
         },
         "require": {
@@ -599,7 +599,7 @@
         "suggest": {
             "laravel/telescope": "^2.0"
         },
-        "time": "2019-09-27T16:49:08+00:00",
+        "time": "2019-10-01T17:44:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1142,17 +1142,17 @@
     },
     {
         "name": "laravel/framework",
-        "version": "v6.0.4",
-        "version_normalized": "6.0.4.0",
+        "version": "v6.1.0",
+        "version_normalized": "6.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08"
+            "reference": "a365bea7ff0dea9a50f5904be9e41656def9af4b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08",
-            "reference": "372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/a365bea7ff0dea9a50f5904be9e41656def9af4b",
+            "reference": "a365bea7ff0dea9a50f5904be9e41656def9af4b",
             "shasum": ""
         },
         "require": {
@@ -1248,12 +1248,12 @@
             "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
             "moontoast/math": "Required to use ordered UUIDs (^1.1).",
             "pda/pheanstalk": "Required to use the beanstalk queue driver (^4.0).",
-            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^3.0).",
+            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
             "symfony/cache": "Required to PSR-6 cache bridge (^4.3.4).",
             "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
             "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
         },
-        "time": "2019-09-24T13:40:36+00:00",
+        "time": "2019-10-01T13:55:56+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

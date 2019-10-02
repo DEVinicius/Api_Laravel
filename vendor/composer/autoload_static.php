@@ -467,6 +467,7 @@ class ComposerStaticInit49d60fdc55ee6566466f35d97dd545a9
         'App\\Http\\Controllers\\Api\\HistoricoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/HistoricoController.php',
         'App\\Http\\Controllers\\Api\\PatrimonioController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/PatrimonioController.php',
         'App\\Http\\Controllers\\Api\\UserArrayController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserArrayController.php',
+        'App\\Http\\Controllers\\Api\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',

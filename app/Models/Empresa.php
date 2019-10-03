@@ -52,4 +52,9 @@ class Empresa extends Model
     public function usuario(){
         return $this->hasMany(User::class, 'id_empresa', 'id');
     }
+
+    public function patrimonio()
+    {
+        return $this->hasMany(Patrimonio::class, 'id_empresa', 'id');
+    }
 }

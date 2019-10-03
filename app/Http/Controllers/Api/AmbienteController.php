@@ -22,4 +22,10 @@ class AmbienteController extends MasterApiController
         $this -> model = $amb;
         $this -> request = $req;
     }
+
+    public function select_esp($id)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id);
+        return response() -> json($data,200);
+    }
 }

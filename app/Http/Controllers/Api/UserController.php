@@ -21,8 +21,9 @@ class UserController extends MasterApiController
        $this -> request = $req;
    }
 
-   public function index() {
-    $data = $this -> model -> with('user_arrays') -> get();
-    return response() -> json($data);
-}
+    public function index() 
+    {
+        $data = $this -> model -> with('user_arrays') ->get()->where(['id_empresa'=>'']);
+        return response() -> json($data);
+    }
 }

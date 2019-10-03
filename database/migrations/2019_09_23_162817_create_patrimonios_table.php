@@ -18,8 +18,10 @@ class CreatePatrimoniosTable extends Migration
             $table->string('nome_patrimonio','60');
             $table->text('descricao');
             $table->bigInteger('id_ambiente')->unsigned();
+            $table->bigInteger('id_empresa')->unsigned();
             $table->string('codigo_patrimonio','30')->unique();
 
+            $table->foreign('id_empresa')->references('id')->on('empresas');
             $table->foreign('id_ambiente')->references('id')->on('ambientes');
         });
     }

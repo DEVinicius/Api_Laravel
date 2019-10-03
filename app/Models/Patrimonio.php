@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Ambiente;
-use App\Models\Historico;
+use App\Models\Empresa;
 
 class Patrimonio extends Model
 {
@@ -35,5 +35,10 @@ class Patrimonio extends Model
     public function historico(){
         //primeiro id da tabela externa, segundo(tabela interna)
         return $this->hasOne(Patrimonio::class, 'id_patrimonio', 'id');
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'id_empresa', 'id');
     }
 }

@@ -15,10 +15,11 @@ use App\Providers\RouteServiceProvider;
   ],function(){
       Route::apiResource('ambientes','AmbienteController');
       Route::apiResource('empresas','EmpresaController');
-      Route::apiResource('setores','SetorController');
       Route::apiResource('patrimonios','PatrimonioController');
       Route::apiResource('historicos','HistoricoController');
       Route::apiResource('usuarios','UserController');
       Route::apiResource('userarray','UserArrayController');
+      Route::get('{id_empresa}/ambientes','AmbienteController@select_esp');
+      Route::get('{id_ambiente}/patrimonios','PatrimonioController@select_esp');
   });
 ?>

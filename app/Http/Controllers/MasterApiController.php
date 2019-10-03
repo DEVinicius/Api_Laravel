@@ -17,7 +17,7 @@ class MasterApiController extends BaseController
 
     public function index() {
         $data = $this -> model -> all();
-        return response() -> json($data);
+        return response() -> json($data,200);
     }
 
     public function store(Request $request)

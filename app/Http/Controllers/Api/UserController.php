@@ -21,9 +21,9 @@ class UserController extends MasterApiController
        $this -> request = $req;
    }
 
-    public function index() 
+    public function select_usr_esp($id) 
     {
-        $data = $this -> model -> with('user_arrays') ->get()->where(['id_empresa'=>'']);
+        $data = $this -> model -> with('user_arrays') ->get()->where('id_empresa',$id);
         return response() -> json($data);
     }
 }

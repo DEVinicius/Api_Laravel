@@ -15,6 +15,7 @@ class Patrimonio extends Model
         'descricao',
         'id_ambiente',
         'codigo_patrimonio',
+        'id_empresa'
     ];
 
     public function rules()
@@ -23,6 +24,7 @@ class Patrimonio extends Model
             'nome_patrimonio' => 'required',
             'descricao' => 'required',
             'id_ambiente' => 'required',
+            'id_empresa' => 'required',
             'codigo_patrimonio' => 'required|unique:patrimonios'
         ];
     }

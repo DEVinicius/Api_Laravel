@@ -21,5 +21,7 @@ use App\Providers\RouteServiceProvider;
       Route::apiResource('userarray','UserArrayController');
       Route::get('{id_empresa}/ambientes','AmbienteController@select_esp');
       Route::get('{id_ambiente}/patrimonios','PatrimonioController@select_esp');
+      Route::get('patrimonios/{id_patrimonio}','PatrimonioController@select_amb_esp');
+      Route::get('{id_empresa}/usuarios','UserController@select_usr_esp');
   });
 ?>

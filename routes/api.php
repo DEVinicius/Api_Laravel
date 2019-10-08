@@ -32,8 +32,8 @@ use App\Providers\RouteServiceProvider;
       Route::get('{id_empresa}/usuarios/{id_nivel}','UserController@select_usr_nvl');
 
       //historico
-      Route::get('','HistoricoController@select_hist_emp');
-      Route::get('','HistoricoController@select_hist_amb');
+      Route::get('{id_empresa}/historico','HistoricoController@select_hist_emp');
+      Route::get('{id_ambiente}','HistoricoController@select_hist_amb');
       Route::get('','HistoricoController@select_hist_pat');
       Route::get('','HistoricoController@select_hist_acao');
   });

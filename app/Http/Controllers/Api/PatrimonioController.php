@@ -28,9 +28,15 @@ class PatrimonioController extends MasterApiController
         return response() -> json($data,200);
     }
 
-    public function select_amb_esp($id_patrimonio)
+    public function select_pat_esp($id_empresa,$id_ambiente)
     {
-        $data = $this -> model -> all()->where('id', $id_patrimonio);
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('id_ambiente', $id_ambiente);
+        return response() -> json($data,200);
+    }
+
+    public function select_pat($id_empresa,$id_patrimonio)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('id', $id_patrimonio);
         return response() -> json($data,200);
     }
 }

@@ -28,4 +28,10 @@ class AmbienteController extends MasterApiController
         $data = $this -> model -> all()->where('id_empresa', $id);
         return response() -> json($data,200);
     }
+
+    public function select_amb($id_empresa, $id)
+    {
+        $data = $this -> model -> all() -> where('id',$id) -> where('id_empresa',$id_empresa);
+        return response() -> json($data,200);
+    }
 }

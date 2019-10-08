@@ -17,14 +17,14 @@ class CreateUsersTable extends Migration
             $table->text('password');
             $table->string('cpf','20');
             $table->bigInteger('id_empresa')->unsigned()->nullable();
-            $table->bigInteger('id_nivel_usuario')->unsigned()->nullable();
+            $table->bigInteger('id_nivel_usuario')->nullable();
             //$table->bigInteger('id_ambiente')->unsigned()->nullable();
             $table->string('telefone','30');
             $table->string('imagem','100')->nullable();
             $table->rememberToken();
 
             $table->foreign('id_empresa')->references('id')->on('empresas');
-            $table->foreign('id_nivel_usuario')->references('id')->on('nivel_users');
+            //$table->foreign('id_nivel_usuario')->references('id')->on('nivel_users');
            // $table->foreign('id_ambiente')->references('id')->on('ambientes');
         });
     }

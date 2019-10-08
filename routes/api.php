@@ -19,9 +19,22 @@ use App\Providers\RouteServiceProvider;
       Route::apiResource('historicos','HistoricoController');
       Route::apiResource('usuarios','UserController');
       Route::apiResource('userarray','UserArrayController');
+
       Route::get('{id_empresa}/ambientes','AmbienteController@select_esp');
-      Route::get('{id_ambiente}/patrimonios','PatrimonioController@select_esp');
-      Route::get('patrimonios/{id_patrimonio}','PatrimonioController@select_amb_esp');
+      Route::get('{id_empresa}/ambientes/{id}','AmbienteController@select_amb');
+      
+
+      Route::get('{id_empresa}/patrimonios','PatrimonioController@select_esp');
+      Route::get('{id_empresa}/ambientes/{id_ambiente}/patrimonios','PatrimonioController@select_pat_esp');
+      Route::get('{id_empresa}/patrimonios/{id_patrimonio}','PatrimonioController@select_pat');
+
       Route::get('{id_empresa}/usuarios','UserController@select_usr_esp');
+      Route::get('{id_empresa}/usuarios/{id_nivel}','UserController@select_usr_nvl');
+
+      //historico
+      Route::get('','HistoricoController@select_hist_emp');
+      Route::get('','HistoricoController@select_hist_amb');
+      Route::get('','HistoricoController@select_hist_pat');
+      Route::get('','HistoricoController@select_hist_acao');
   });
 ?>

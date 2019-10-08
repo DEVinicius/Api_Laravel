@@ -15,7 +15,7 @@ class CreateHistoricosTable extends Migration
     {
         Schema::create('historicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome_historico','60');
+            $table->bigInteger('nome_historico');
             $table->bigInteger('id_patrimonio')->unsigned();
             $table->bigInteger('id_empresa')->unsigned();
             $table->bigInteger('id_ambiente')->unsigned();

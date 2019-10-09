@@ -21,4 +21,28 @@ class HistoricoController extends MasterApiController
        $this -> model = $pat;
        $this -> request = $req;
    }
+
+    public function select_hist_emp($id_empresa)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa);
+        return response() -> json($data,200);
+    }
+
+    public function select_hist_amb($id_empresa, $id_ambiente)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('id_ambiente',$id_ambiente);
+        return response() -> json($data,200);
+    }
+
+    public function select_hist_pat($id_empresa, $id_patrimonio)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('id_patrimonio',$id_patrimonio);
+        return response() -> json($data,200);
+    }
+
+    public function select_hist_acao($id_empresa, $num_acao)
+    {
+        $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('nome_historico',$num_acao);
+        return response() -> json($data,200);
+    }
 }

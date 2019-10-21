@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('imagem','100')->nullable();
             $table->rememberToken();
 
-            $table->foreign('id_empresa')->references('id')->on('empresas');
+            $table->foreign('id_empresa')->references('id')->on('empresas') -> onUpdate('cascade') -> onDelete('cascade');
             //$table->foreign('id_nivel_usuario')->references('id')->on('nivel_users');
            // $table->foreign('id_ambiente')->references('id')->on('ambientes');
         });

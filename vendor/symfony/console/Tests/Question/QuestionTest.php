@@ -140,7 +140,7 @@ class QuestionTest extends TestCase
     {
         return [
             ['Potato'],
-            [new \stdClass()],
+            [new \stdclass()],
             [false],
         ];
     }

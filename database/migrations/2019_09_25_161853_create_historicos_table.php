@@ -22,9 +22,9 @@ class CreateHistoricosTable extends Migration
             $table->string('local_destino','50')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_patrimonio')->references('id')->on('patrimonios');
-            $table->foreign('id_empresa')->references('id')->on('empresas');
-            $table->foreign('id_ambiente')->references('id')->on('ambientes');
+            $table->foreign('id_patrimonio')->references('id')->on('patrimonios') -> onUpdate('cascade') -> onDelete('cascade');
+            $table->foreign('id_empresa')->references('id')->on('empresas') -> onUpdate('cascade') -> onDelete('cascade');
+            $table->foreign('id_ambiente')->references('id')->on('ambientes') -> onUpdate('cascade') -> onDelete('cascade');
         });
     }
 

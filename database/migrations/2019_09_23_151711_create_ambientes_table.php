@@ -14,7 +14,7 @@ class CreateAmbientesTable extends Migration
             $table->bigInteger('quantidade_patrimonio');
             $table->bigInteger('id_empresa')->unsigned();
 
-            $table->foreign('id_empresa')->references('id')->on('empresas');
+            $table->foreign('id_empresa')->references('id')->on('empresas') -> onUpdate('cascade') -> onDelete('cascade');
             
         });
     }

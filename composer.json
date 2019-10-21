@@ -14,6 +14,7 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
+        "symfony/console": "4.3.4",
         "tymon/jwt-auth": "1.0.*"
     },
     "require-dev": {

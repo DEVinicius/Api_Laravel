@@ -39,4 +39,13 @@ class PatrimonioController extends MasterApiController
         $data = $this -> model -> all()->where('id_empresa', $id_empresa) -> where('id', $id_patrimonio);
         return response() -> json($data,200);
     }
+
+    public function deletepatrimonio($id){
+        if($this -> model -> find($id)) {
+            $this -> model -> where('id', $id) -> delete();
+            return response() -> json(['success' => 'Deletado com sucesso'], 200);
+        }else {
+            return response() -> json(['error' => 'Nada foi encontrado'], 404);
+        }
+    }
 }

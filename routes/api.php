@@ -20,8 +20,15 @@ use App\Providers\RouteServiceProvider;
       Route::apiResource('usuarios','UserController');
       Route::apiResource('userarray','UserArrayController');
 
-      Route::get('{id_empresa}/ambientes','AmbienteController@select_esp');
+      Route::get('{id}/ambientes','AmbienteController@select_esp');
       Route::get('{id_empresa}/ambientes/{id}','AmbienteController@select_amb');
+
+      //deletes
+      Route::get('ambiente/{id}','AmbienteController@deleteambiente');
+      Route::get('patrimonio/{id}','PatrimonioController@deletepatrimonio');
+      Route::get('userarray/{id}','UserArrayController@deleteuserarray');
+      Route::get('historico/{id}','HistoricoController@deletehistorico');
+      Route::get('empresa/{id}','EmpresaController@deleteempresa');
       
 
       Route::get('{id_empresa}/patrimonios','PatrimonioController@select_esp');

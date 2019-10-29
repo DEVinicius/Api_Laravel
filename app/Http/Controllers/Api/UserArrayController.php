@@ -20,4 +20,13 @@ class UserArrayController extends MasterApiController
        $this -> model = $pat;
        $this -> request = $req;
    }
+
+   public function deleteuserarray($id){
+    if($this -> model -> find($id)) {
+        $this -> model -> where('id', $id) -> delete();
+        return response() -> json(['success' => 'Deletado com sucesso'], 200);
+    }else {
+        return response() -> json(['error' => 'Nada foi encontrado'], 404);
+    }
+}
 }

@@ -14,6 +14,7 @@ class Empresa extends Model
     
     protected $fillable = [ 
         'nome_empresa',
+        'codigo_empresa',
         'cnpj',
         'cep',
         'endereco',

@@ -29,6 +29,13 @@ use App\Providers\RouteServiceProvider;
       Route::get('userarray/{id}','UserArrayController@deleteuserarray');
       Route::get('historico/{id}','HistoricoController@deletehistorico');
       Route::get('empresa/{id}','EmpresaController@deleteempresa');
+
+      //updates
+      Route::post('ambiente_up/{id}','AmbienteController@updateambiente');
+      Route::post('patrimonio_up/{id}','PatrimonioController@updatepatrimonio');
+      Route::post('userarray_up/{id}','UserArrayController@updateuserarray');
+      Route::post('historico_up/{id}','HistoricoController@updatehistorico');
+      Route::post('empresa_up/{id}','EmpresaController@updateempresa');
       
 
       Route::get('{id_empresa}/patrimonios','PatrimonioController@select_esp');

@@ -14,8 +14,7 @@ class Ambiente extends Model
     public $timestamps = false;
     
     protected $fillable = [ 
-        'nome_ambiente', 
-        'quantidade_patrimonio', 
+        'nome_ambiente',  
         'id_empresa'
     ];
 
@@ -24,7 +23,6 @@ class Ambiente extends Model
         //validação dos campos do formulário
         return [
             'nome_ambiente' => 'required',
-            'quantidade_patrimonio' => 'required',
             'id_empresa' => 'required'
         ];
     }

@@ -6,19 +6,16 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateHistoricosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('historicos', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->bigInteger('nome_historico');
             $table->bigInteger('id_patrimonio')->unsigned();
             $table->bigInteger('id_empresa')->unsigned();
             $table->bigInteger('id_ambiente')->unsigned();
+            $table->text('descricao');
             $table->string('local_destino','50')->nullable();
             $table->timestamps();
 
@@ -28,11 +25,7 @@ class CreateHistoricosTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('historicos');

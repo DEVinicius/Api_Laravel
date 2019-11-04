@@ -42,7 +42,7 @@ class Ambiente extends Model
         return $this->hasMany(Historico::class, 'id_ambiente', 'id');
     }
 
-    public function user_array(){
-        return $this->belongsToMany(User::class, 'userarrays');
+    public function user_arrays(){
+        return $this->belongsToMany(User::class, 'user_arrays');
     }
 }

@@ -38,5 +38,12 @@ class UserController extends MasterApiController
         $data = $this -> model -> with('user_arrays') ->get()->where('id_empresa',$id_empresa) -> where('id_nivel_usuario', $id_nivel);
         return response() -> json($data);
     }
+
+    public function updateuser(Request $req, $id){
+        $dados = $req->all();
+
+        $data = $this -> model ->where('id',$id) -> update($dados);
+        return response() -> json($data, 200);
+    }
 }
 

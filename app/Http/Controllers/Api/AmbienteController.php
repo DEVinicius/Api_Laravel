@@ -44,17 +44,11 @@ class AmbienteController extends MasterApiController
         }
     }
 
-    public function updateambiente(Request $req){
-
+    public function updateambiente(Request $req, $id){
         $dados = $req->all();
 
-        dd($dados);
-        // if($this -> model -> find($dados['id'])) {
-        //     $this -> model -> where('id', $dados['id']) -> update([]);
-        //     return response() -> json(['success' => 'Deletado com sucesso'], 200);
-        // }else {
-        //     return response() -> json(['error' => 'Nada foi encontrado'], 404);
-        // }
+        $data = $this -> model ->where('id',$id) -> update($dados);
+        return response() -> json($data, 200);
     }
 }
     

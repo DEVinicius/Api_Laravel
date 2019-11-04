@@ -22,11 +22,19 @@ class UserArrayController extends MasterApiController
    }
 
    public function deleteuserarray($id){
-    if($this -> model -> find($id)) {
-        $this -> model -> where('id', $id) -> delete();
-        return response() -> json(['success' => 'Deletado com sucesso'], 200);
-    }else {
-        return response() -> json(['error' => 'Nada foi encontrado'], 404);
+        if($this -> model -> find($id)) {
+            $this -> model -> where('id', $id) -> delete();
+            return response() -> json(['success' => 'Deletado com sucesso'], 200);
+        }else {
+            return response() -> json(['error' => 'Nada foi encontrado'], 404);
+        }
+
     }
-}
+    
+    public function updateuserarray(Request $req, $id){
+        $dados = $req->all();
+
+        $data = $this -> model ->where('id',$id) -> update($dados);
+        return response() -> json($data, 200);
+    }
 }

@@ -48,4 +48,11 @@ class PatrimonioController extends MasterApiController
             return response() -> json(['error' => 'Nada foi encontrado'], 404);
         }
     }
+
+    public function updatepatrimonio(Request $req, $id){
+        $dados = $req->all();
+
+        $data = $this -> model ->where('id',$id) -> update($dados);
+        return response() -> json($data, 200);
+    }
 }

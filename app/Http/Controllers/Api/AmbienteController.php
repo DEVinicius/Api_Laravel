@@ -17,8 +17,6 @@ class AmbienteController extends MasterApiController
     //Encontrar o caminho (pasta)
     protected $path;
 
-    private $tabela = 'ambientes';
-
     public function __construct(Ambiente $amb, Request $req)
     {   
         $this -> model = $amb;
@@ -27,14 +25,14 @@ class AmbienteController extends MasterApiController
 
     public function select_esp($id)
     {
-        $data = $this -> model -> all() -> where('id_empresa', $id);
-        return response() -> json ($data,200);
+        $data = $this -> model -> with('user_arrays') ->get()-> where('id_empresa', $id);
+        return response() -> json($data);
     }
 
-    public function select_amb($id_empresa, $id)
+    public function select_amb($id_empresa, $id) 
     {
-        $data = $this -> model -> all() -> where('id',$id) -> where('id_empresa',$id_empresa);
-        return response() -> json($data,200);
+        $data = $this -> model -> with('user_arrays') ->get()->where('id_empresa',$id_empresa) -> where('id', $id);
+        return response() -> json($data);
     }
 
     public function deleteambiente($id){

@@ -11,7 +11,6 @@ class CreateAmbientesTable extends Migration
         Schema::create('ambientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_ambiente','100');
-            $table->bigInteger('quantidade_patrimonio');
             $table->bigInteger('id_empresa')->unsigned();
 
             $table->foreign('id_empresa')->references('id')->on('empresas') -> onUpdate('cascade') -> onDelete('cascade');

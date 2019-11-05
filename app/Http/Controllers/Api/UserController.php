@@ -21,6 +21,15 @@ class UserController extends MasterApiController
        $this -> request = $req;
    }
 
+   public function deletepatrimonio($id){
+        if($this -> model -> find($id)) {
+            $this -> model -> where('id', $id) -> delete();
+            return response() -> json(['success' => 'Deletado com sucesso'], 200);
+        }else {
+            return response() -> json(['error' => 'Nada foi encontrado'], 404);
+        }
+    }
+
     public function select_usr_esp($id) 
     {
         $data = $this -> model -> with('user_arrays') ->get()->where('id_empresa',$id);

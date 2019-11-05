@@ -30,6 +30,7 @@ use App\Providers\RouteServiceProvider;
       Route::get('userarray/{id}','UserArrayController@deleteuserarray');
       Route::get('historico/{id}','HistoricoController@deletehistorico');
       Route::get('empresa/{id}','EmpresaController@deleteempresa');
+      Route::get('usuario/{id}','UsuarioController@deleteuser');
 
       //updates
       Route::post('ambiente_up/{id}','AmbienteController@updateambiente');

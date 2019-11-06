@@ -30,7 +30,7 @@ use App\Providers\RouteServiceProvider;
       Route::get('userarray/{id}','UserArrayController@deleteuserarray');
       Route::get('historico/{id}','HistoricoController@deletehistorico');
       Route::get('empresa/{id}','EmpresaController@deleteempresa');
-      Route::get('usuario/{id}','UsuarioController@deleteuser');
+      Route::get('usuario/{id}','UserController@deleteuser');
 
       //updates
       Route::post('ambiente_up/{id}','AmbienteController@updateambiente');
@@ -45,9 +45,10 @@ use App\Providers\RouteServiceProvider;
       Route::get('{id_empresa}/ambientes/{id_ambiente}/patrimonios','PatrimonioController@select_pat_esp');
       Route::get('{id_empresa}/patrimonios/{id_patrimonio}','PatrimonioController@select_pat');
 
+
       Route::get('{id_empresa}/usuarios','UserController@select_usr_esp');
       Route::get('{id_empresa}/usuarios/{id_nivel}','UserController@select_usr_nvl');
-
+      Route::get('usuarios_cpf/{email}','UserController@select_email');
       //historico
       Route::get('{id_empresa}/historicos','HistoricoController@select_hist_emp');
       Route::get('{id_empresa}/historicos/{id_ambiente}/ambientes','HistoricoController@select_hist_amb');

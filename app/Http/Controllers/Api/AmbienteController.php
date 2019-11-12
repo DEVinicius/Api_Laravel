@@ -17,6 +17,30 @@ class AmbienteController extends MasterApiController
     //Encontrar o caminho (pasta)
     protected $path;
 
+    public function insertamb(Request $req)
+    {   
+        $dados = $req->all();
+
+        $user_Array = array();
+        $ambiente = array();
+
+        for($i = 0; $i<4; $i++)
+        {
+            if($i<2){
+                array_push($user_Array, $dados[$i]);
+            }
+            else{
+                array_push($ambiente, $dados[$i]);
+            }
+        }
+
+        $data1 = $this -> model -> create($user_Array);
+        $data2 = $this -> model -> create($ambiente);
+
+        return response() -> json($data1) && response() -> json($data2);
+
+    }
+
     public function __construct(Ambiente $amb, Request $req)
     {   
         $this -> model = $amb;

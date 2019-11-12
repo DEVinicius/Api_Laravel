@@ -25,10 +25,8 @@ class User extends Authenticatable implements JWTSubject
         'name', 
         'email', 
         'password',
-        'cpf',
         'id_empresa',
         'id_nivel_usuario',
-        'telefone',
         'imagem'
     ];
 
@@ -70,7 +68,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(NivelUsuario::class, 'id_nivel_usuario', 'id');
     }
 
-    public function user_arrays(){
-        return $this->belongsToMany(Ambiente::class, 'user_arrays');
+    public function ambiente(){
+        //primeiro id da tabela externa, segundo(tabela interna)
+        return $this->hasMany(Ambiente::class, 'id_usuario', 'id');
     }
+
+
 }

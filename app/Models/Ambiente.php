@@ -15,7 +15,8 @@ class Ambiente extends Model
     
     protected $fillable = [ 
         'nome_ambiente',  
-        'id_empresa'
+        'id_empresa',
+        'id_usuario'
     ];
 
     public function rules()
@@ -42,7 +43,8 @@ class Ambiente extends Model
         return $this->hasMany(Historico::class, 'id_ambiente', 'id');
     }
 
-    public function user_arrays(){
-        return $this->belongsToMany(User::class, 'user_arrays');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_usuario', 'id');
     }
 }

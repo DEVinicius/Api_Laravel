@@ -24,6 +24,8 @@ use App\Providers\RouteServiceProvider;
       Route::get('{id}/ambientes','AmbienteController@select_esp');
       Route::get('{id_empresa}/ambientes/{id}','AmbienteController@select_amb');
 
+      Route::post('ambiente_insert','AmbienteController@insertamb');
+
       //deletes
       Route::get('ambiente/{id}','AmbienteController@deleteambiente');
       Route::get('patrimonio/{id}','PatrimonioController@deletepatrimonio');

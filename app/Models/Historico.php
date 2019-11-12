@@ -15,6 +15,7 @@ class Historico extends Model
         'id_patrimonio',
         'id_empresa',
         'id_ambiente',
+        'descricao',
         'local_destino'
     ];
 

@@ -23,7 +23,7 @@ class AuthController extends Controller
         $dados = $req->all();
 
         
-        if(User::where('cpf', $dados['cpf'])->orWhere('email', $dados['email'])->count() == 0){               
+        if(User::where('email', $dados['email'])->count() == 0){               
                     $dados['password'] = bcrypt($dados['password']);
                     User::create($dados);
 

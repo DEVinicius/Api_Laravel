@@ -78,7 +78,7 @@ class MasterApiController extends BaseController
 
             $nameFile = "{$name}.{$extension}";
 
-            $upload = Image::make($dataForm[$this -> upload]) -> resize($this -> width, $this -> height)->save(storage_path("app/public/clientes/$nameFile", 70));
+            $upload = Image::make($dataForm[$this -> upload]) -> resize($this -> width, $this -> height)->save(storage_path("app/public_html/storage/$nameFile", 70));
             
             if(!$upload) {
                 return response() -> json(['error' => 'Falha ao fazer upload'], 500);

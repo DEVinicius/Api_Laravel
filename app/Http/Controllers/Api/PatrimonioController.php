@@ -24,7 +24,7 @@ class PatrimonioController extends MasterApiController
 
    public function select_esp($id)
     {
-        $data = $this -> model -> all()->where('id_empresa', $id);
+        $data = $this -> model -> all()-> join('ambientes','ambientes.id','patrimonios.id_ambiente')->where('id_empresa', $id);
         return response() -> json($data,200);
     }
 

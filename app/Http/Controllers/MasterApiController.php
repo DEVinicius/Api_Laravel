@@ -22,7 +22,7 @@ class MasterApiController extends BaseController
 
     public function store(Request $request)
     {
-        $this -> validate($request, $this -> model -> rules());
+        //$this -> validate($request, $this -> model -> rules());
 
         $dataForm = $request->all();
 

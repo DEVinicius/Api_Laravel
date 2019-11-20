@@ -13,7 +13,7 @@ class UserController extends MasterApiController
 {
     protected $model;
 
-   protected $upload = 'image';
+   protected $upload;
 
    //Encontrar o caminho (pasta)
    protected $path;
@@ -58,41 +58,13 @@ class UserController extends MasterApiController
 
     public function updateuser(Request $request, $id){
 
-        if(!$data = $this -> model -> find($id))
-            return response() -> json(['error' => 'Nada foi encontrado'], 404);
+        $dados = $request->all();
+        $data = $this -> model -> where('id',$id ) ->update($dados);
+        return response() -> json($data);
+    }
 
-        $this -> validate($request, $this -> model -> rules());
+    public function update_image($request, $id){
 
-        $dataForm = $request->all();
-
-        if($request -> hasFile($this -> upload) && $request->file($this -> upload)->isValid()) {
-
-            $arquivo = $this -> model -> arquivo($id);
-
-            if($arquivo) {
-                Storage::disk('public') -> delete("/{$this -> path}/$arquivo");
-            }
-
-            $extension = $request -> file($this -> upload) -> extension();
-
-            $name = uniqid(date('His'));
-
-            $nameFile = "{$name}.{$extension}";
-
-            $upload = Image::make($dataForm[$this -> upload]) -> resize($this -> width, $this -> height)->save(storage_path("app/public_html/storage/$nameFile", 70));
-            
-            if(!$upload) {
-                return response() -> json(['error' => 'Falha ao fazer upload'], 500);
-            } else {
-                $dataForm[$this -> upload] = $nameFile;
-            }
-        }
-
-        $data -> update($dataForm);
-
-        return response() -> json($data, 200);
-
-        
     }
 
 

@@ -64,6 +64,29 @@ class UserController extends MasterApiController
     }
 
     public function update_image(Request $request, $id){
+        // $dados = $request->all();
+
+        // //dd($dados['images']);
+        // $imagem = $dados['images'];
+        // //dd($imagem);
+
+        // $extensao = pathinfo($dados['images']);
+        // $extensao = ".".$extensao['extension'];
+        // dd($extensao);
+        // $imagem = time().$extensao;
+
+        $file = $request->file('images');
+
+        //dd($request->file('images'));
+
+        $extensao = $file->getClientOriginalExtension();
+
+        $nome_arquivo = time().'.'.$extensao;
+
+        $file->move('uploads/highlights/', $nome_arquivo);
+
+        dd($nome_arquivo);
+
         
     }
 

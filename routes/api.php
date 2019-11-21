@@ -41,6 +41,7 @@ use App\Providers\RouteServiceProvider;
       Route::post('historico_up/{id}','HistoricoController@updatehistorico');
       Route::post('empresa_up/{id}','EmpresaController@updateempresa');
       Route::post('usuario_up/{id}','UserController@updateuser');
+      Route::post('image_up/{id}','UserController@update_image');
       
 
       Route::get('{id_empresa}/patrimonios','PatrimonioController@select_esp');

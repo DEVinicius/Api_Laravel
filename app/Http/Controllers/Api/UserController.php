@@ -63,8 +63,8 @@ class UserController extends MasterApiController
         return response() -> json($data);
     }
 
-    public function update_image($request, $id){
-
+    public function update_image(Request $request, $id){
+        
     }
 
 

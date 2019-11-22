@@ -12,8 +12,8 @@ class CreateHistoricosTable extends Migration
             $table->bigIncrements('id');
 
             $table->bigInteger('nome_historico');
-            $table->bigInteger('id_patrimonio')->unsigned();
-            $table->bigInteger('id_empresa')->unsigned();
+            $table->bigInteger('id_patrimonio')->unsigned()->nullable();
+            $table->bigInteger('id_empresa')->unsigned()->nullable();
             $table->bigInteger('id_ambiente')->unsigned();
             $table->text('descricao');
             $table->string('local_destino','50')->nullable();

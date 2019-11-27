@@ -25,13 +25,13 @@ class AmbienteController extends MasterApiController
 
     public function select_esp($id)
     {
-        $data = $this -> model -> join('users','users.id','ambientes.id_usuario')->get()-> where('id_empresa', $id);
+        $data = $this -> model -> all()-> where('id_empresa', $id);
         return response() -> json($data);
     }
 
     public function select_amb($id_empresa, $id) 
     {
-        $data = $this -> model -> join('users','users.id','ambientes.id_usuario')->get()->where('id_empresa',$id_empresa) -> where('id', $id);
+        $data = $this -> model->all()->where('id_empresa',$id_empresa) -> where('id', $id);
         return response() -> json($data);
     }
 

@@ -51,11 +51,14 @@ use App\Providers\RouteServiceProvider;
 
       Route::get('{id_empresa}/usuarios','UserController@select_usr_esp');
       Route::get('{id_empresa}/usuarios/{id_nivel}','UserController@select_usr_nvl');
-      Route::get('usuarios_cpf/{email}','UserController@select_email');
+      Route::post('usuarios_email/{email}','UserController@update_email');
       //historico
       Route::get('{id_empresa}/historicos','HistoricoController@select_hist_emp');
       Route::get('{id_empresa}/historicos/{id_ambiente}/ambientes','HistoricoController@select_hist_amb');
       Route::get('{id_empresa}/historicos/{id_patrimonio}/patrimonios','HistoricoController@select_hist_pat');
       Route::get('{id_empresa}/historicos/{num_historico}','HistoricoController@select_hist_acao');
+
+      //pesquisa
+      Route::get('usuarios/{texto}/{id_empresa}/{id_nivel}', 'UserController@pesquisa');
   });
 ?>

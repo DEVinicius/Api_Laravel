@@ -24,6 +24,11 @@ class UserController extends MasterApiController
        $this -> request = $req;
    }
 
+   public function pesquisa($texto, $id_empresa, $id_nivel){
+        $data = $this -> model -> where('id_empresa',$id_empresa) -> where('name', 'like', '%'.$texto.'%')-> where('id_nivel_usuario', $id_nivel)-> get();
+        return response() -> json($data);
+   }
+
    public function select_email($email){
         $data = $this -> model -> all()->where('email',$email);
         return response() -> json($data);
@@ -63,21 +68,16 @@ class UserController extends MasterApiController
         return response() -> json($data);
     }
 
+    public function update_email(Request $request, $email){
+
+        $dados = $request->all();
+        $data = $this -> model -> where('email',$email ) ->update($dados);
+        return response() -> json($data);
+    }
+
     public function update_image(Request $request, $id){
-        // $dados = $request->all();
-
-        // //dd($dados['images']);
-        // $imagem = $dados['images'];
-        // //dd($imagem);
-
-        // $extensao = pathinfo($dados['images']);
-        // $extensao = ".".$extensao['extension'];
-        // dd($extensao);
-        // $imagem = time().$extensao;
-
         $file = $request->file('images');
 
-        //dd($request->file('images'));
 
         $extensao = $file->getClientOriginalExtension();
 
@@ -85,11 +85,12 @@ class UserController extends MasterApiController
 
         $file->move('uploads/highlights/', $nome_arquivo);
 
-        dd($nome_arquivo);
+        $dados = array(
+            'imagem' => $nome_arquivo
+        );
 
-        
+        $data = $this -> model -> where('id',$id ) ->update($dados);
+        return response() -> json($data);
     }
-
-
 }
 

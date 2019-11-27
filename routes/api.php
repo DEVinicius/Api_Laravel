@@ -60,5 +60,7 @@ use App\Providers\RouteServiceProvider;
 
       //pesquisa
       Route::get('usuarios/{texto}/{id_empresa}/{id_nivel}', 'UserController@pesquisa');
+      Route::get('patrimonios/{texto}/{id_empresa}', 'PatrimonioController@pesquisa');
+      Route::get('ambientes/{texto}/{id_empresa}', 'AmbienteController@pesquisa');
   });
 ?>

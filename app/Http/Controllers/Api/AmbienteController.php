@@ -22,6 +22,10 @@ class AmbienteController extends MasterApiController
         $this -> model = $amb;
         $this -> request = $req;
     }
+    public function pesquisa($texto, $id_empresa){
+        $data = $this -> model -> where('id_empresa',$id_empresa) -> where('nome_ambiente', 'like', '%'.$texto.'%')-> where('id_nivel_usuario', $id_nivel)-> get();
+        return response() -> json($data);
+    }
 
     public function select_esp($id)
     {
